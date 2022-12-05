@@ -1,0 +1,23 @@
+---
+import Head from '../components/Core/Head.astro';
+import Footer from '../components/Core/Footer.astro';
+import Header from '../components/Core/Header.astro';
+import {SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL} from '../config'
+
+const { pageInfo } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="text-sm sm:text-base">
+	<head>
+		<Head title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+	</head>
+	<body class="bg-orange-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-300 break-words leading-6 transition-colors duration-500">
+		<Header/>
+		<div class="text-zinc-100 selection:bg-teal-300 selection:text-zinc-800 h-screen flex items-center justify-center">
+			<slot />
+		</div>
+		<Footer/>
+	</body>
+</html>
+
